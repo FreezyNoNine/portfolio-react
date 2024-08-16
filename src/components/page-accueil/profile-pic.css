@@ -1,0 +1,14 @@
+.pdp-accueil {
+    width: 32%;
+    height: 32%;
+    background-color: black;
+    border-radius: 60% 40% 60% 40%;
+    margin: 5%;
+}
+
+@media (max-width: 1024px) {
+    .pdp-accueil {
+        width: 84%;
+        height: 84%;
+    }
+}

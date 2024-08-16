@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './components/navbar/Navbar'
+import ProfilePic from './components/page-accueil/profile-pic'
 
 const App = () => {
 
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <div className={`full-container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme}/>
+      <ProfilePic />
     </div>
   )
 }
