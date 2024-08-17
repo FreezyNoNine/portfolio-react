@@ -1,0 +1,143 @@
+/* Conteneur principal */
+.accueil-container {
+    display: flex;
+    align-items: center;
+    margin-left: 12.5%;
+    margin-top: 5%;
+    justify-content: flex-start;
+}
+
+/* Style pour la photo de profil */
+.pdp-accueil {
+    width: 32%;
+    height: 32%;
+    background-color: black;
+    border-radius: 60% 40% 60% 40%;
+    margin-right: 5%;
+    transition: 0.5s;
+}
+
+.pdp-accueil.dark {
+    background-color: white;
+}
+
+.pdp-accueil:hover {
+    background-color: #FF5733;
+}
+
+/* Style pour le prénom */
+.title-prenom {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8vw; /* Utiliser une unité relative basée sur la largeur du viewport */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Style pour le nom */
+.title-nom {
+    font-family: 'Rubik', sans-serif;
+    font-size: 10vw; /* Utiliser une unité relative basée sur la largeur du viewport */
+    font-weight: 700;
+    color: #555;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Mode sombre */
+.title-prenom.dark, .title-nom.dark {
+    color: #f0f0f0;
+}
+
+/* Effet survol pour donner de l'interactivité */
+.title-prenom:hover, .title-nom:hover {
+    color: #FF5733;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Responsive Design pour les tablettes (1024px et moins) */
+@media (max-width: 1024px) {
+    .accueil-container {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .pdp-accueil {
+        width: 50%;
+        height: 50%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .title-prenom, .title-nom {
+        text-align: center;
+        font-size: 8rem;
+    }
+
+    .title-nom {
+        font-size: 10rem;
+    }
+}
+
+/* Responsive Design pour les petits écrans et smartphones (768px et moins) */
+@media (max-width: 768px) {
+    .pdp-accueil {
+        width: 60%;
+        height: 60%;
+    }
+
+    .title-prenom, .title-nom {
+        font-size: 5rem;
+    }
+
+    .title-nom {
+        font-size: 7rem;
+    }
+}
+
+/* Responsive Design pour les très petits écrans et smartphones (480px et moins) */
+@media (max-width: 480px) {
+    .pdp-accueil {
+        width: 70%; 
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .title-prenom, .title-nom {
+        font-size: 4rem;
+    }
+
+    .title-nom {
+        font-size: 5rem;
+    }
+}
+
+/* Responsive Design pour les très petits écrans et smartphones (412px et moins) */
+@media (max-width: 412px) {
+    .accueil-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5%; /* Ajouter du padding pour éviter que le contenu touche les bords de l'écran */
+    }
+
+    .pdp-accueil {
+        width: 80%; /* Réduire davantage la taille de l'image */
+        height: auto;
+        margin-bottom: 15px; /* Ajouter un peu d'espace en dessous de l'image */
+    }
+
+    .title-prenom, .title-nom {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .title-nom {
+        font-size: 4rem;
+    }
+}

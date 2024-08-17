@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* NAVBAR */
@@ -9,26 +8,37 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /*z-index: 1000;
-    top: 0;
-    left: 0;
-    position: fixed;*/
     background-color: transparent;
     padding: 0 7%;
     font-family: "Rubik", sans-serif;
+    transition: 0.1s;
 }
 
-/*LOGO NAVBAR*/
+/* LOGO NAVBAR */
 .navbar-logo {
     width: 120px;
     cursor: pointer;
 }
 
-/* LISTE DES ONGLETS */
+/* WRAPPER POUR LE MENU */
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1; /* La liste occupe tout l'espace disponible entre le logo et la barre de recherche */
+}
 
+/* BOUTON MENU */
+.menu-toggle {
+    display: none; /* Masquer le bouton menu par défaut sur grands écrans */
+}
+
+/* LISTE DES ONGLETS */
 ul {
     flex: 1;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Affiche les onglets horizontalement par défaut */
     text-align: center;
 }
 
@@ -39,13 +49,16 @@ ul li {
     cursor: pointer;
 }
 
+ul li:hover {
+    color: #FF5733;
+    transition: color 0.3s ease-in-out;
+}
+
 .ul-container.dark {
     color: white;
 }
 
 /* BARRE DE RECHERCHE */
-
-/* INPUT */
 .search-box-container input {
     padding: 6px;
     background: transparent;
@@ -56,17 +69,14 @@ ul li {
     max-width: 200px;
 }
 
-/* PLACEHOLDER */
 .search-box-container input::placeholder {
     color: black;
 }
 
-/* CHANGEMENT DE FOND PASSAGE MODE SOMBRE */
 .search-box-container.dark {
     background-color: white;
 }
 
-/* PARAMS BARRE DE RECHERCHE */
 .search-box-container {
     display: flex;
     align-items: center;
@@ -95,14 +105,73 @@ ul li {
     margin-left: 40px;
 }
 
-@media (max-width: 800px) {
-    .navbar-container{
-        display: none;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton menu sur petits écrans */
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        margin: 10px 0; /* Espace autour du bouton menu */
+    }
+
+    .ul-container {
+        display: none; /* Masquer la liste par défaut sur petits écrans */
+        flex-direction: column; /* Afficher les éléments en colonne */
+        width: 100%; /* Assurer que la liste occupe toute la largeur */
+        background-color: white; /* Fond blanc pour le menu déroulant */
+        border: 1px solid #ddd; /* Bordure légère pour délimiter le menu */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le menu */
+        z-index: 1; /* Assurer que la liste soit au-dessus des autres éléments */
+        position: relative; /* Nécessaire pour que la liste pousse le contenu sous-jacent */
+        margin-top: 10px; /* Espacement au-dessus du menu */
+    }
+
+    .ul-container.open {
+        display: flex; /* Afficher la liste lorsque le menu est ouvert */
+    }
+
+    .ul-container.dark {
+        background-color: black;
+        color: white;
+    }
+
+    .search-box-container, .activer-icone {
+        margin: 5%;
+    }
+
+    .menu-toggle.dark {
+        color: white;
     }
 }
 
-@media (min-width: 800px) and (max-width: 1024px) {
-    .navbar-container ul li{
-        display: none;
+/*@media (min-width: 800px) and (max-width: 1024px) {
+    .navbar-container {
+        flex-direction: row;
+        align-items: center;
     }
-}
+
+    .menu-toggle {
+        display: none; /* Masquer le bouton menu sur écrans moyens 
+    }
+
+    .ul-container {
+        display: flex; /* Afficher la liste horizontalement 
+        flex-direction: row; /* Alignement horizontal 
+        width: auto; /* Largeur automatique 
+    }
+}*/

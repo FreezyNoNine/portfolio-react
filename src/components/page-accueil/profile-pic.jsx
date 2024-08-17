@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import reactPDP from "../../assets/pdp.png"
-import './profile-pic.css'
+import pdpAccueil from "../../assets/pdp.png"
+import './page-accueil.css'
 
-const ShowProfilePic = () => {
+const ShowProfilePic = ({theme}) => {
 
   return (
-      <img src={reactPDP} alt="" className='pdp-accueil' />
+    <img src={pdpAccueil} alt="" className={`pdp-accueil ${theme === 'dark' ? 'dark' : 'light'}`} />
   )
 
 }
