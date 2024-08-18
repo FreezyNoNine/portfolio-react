@@ -6,6 +6,7 @@ import search_icon_light from '../../assets/loupe-b.png';
 import search_icon_dark from '../../assets/loupe-w.png';
 import toggle_day from '../../assets/night.png';
 import toggle_night from '../../assets/day.png';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = ({ theme, setTheme }) => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -23,23 +24,20 @@ const Navbar = ({ theme, setTheme }) => {
             <img src={theme === 'light' ? logo_light : logo_dark} alt="" className='navbar-logo' />
 
             <div className="menu-wrapper">
-                {/* Bouton pour ouvrir/fermer le menu sur petits écrans */}
-                <button className={`menu-toggle ${theme === 'dark' ? 'dark' : 'light'}`} onClick={toggleMenu}>
-                    {menuOpen ? '✖' : '☰'} {/* Symboles pour le bouton de menu */}
+                <button className={`menu-toggle ${theme}`} onClick={toggleMenu}>
+                    {menuOpen ? '✖' : '☰'}
                 </button>
-
-                {/* Liste des onglets */}
+                
                 <ul className={`ul-container ${theme} ${menuOpen ? 'open' : ''}`}>
-                    <li>Accueil</li>
-                    <li>Présentation</li>
-                    <li>Curriculum Vitae</li>
-                    <li>Projets</li>
-                    <li>Compétences Techniques</li>
-                    <li>Stages</li>
-                    <li>Activités Professionnelles</li>
-                    <li>Blog ou Articles</li>
-                    <li>Contact</li>
-                    <li>Références</li>
+                    <li><NavLink to="/">Accueil</NavLink></li>
+                    <li><NavLink to="/presentation">Présentation</NavLink></li>
+                    <li><NavLink to="/cv">Curriculum Vitae</NavLink></li>
+                    <li><NavLink to="/projets">Projets</NavLink></li>
+                    <li><NavLink to="/competences">Compétences Techniques</NavLink></li>
+                    <li><NavLink to="/stages">Stages</NavLink></li>
+                    <li><NavLink to="/experience">Activités Professionnelles</NavLink></li>
+                    <li><NavLink to="/contact">Contact</NavLink></li>
+                    <li><NavLink to="/references">Réferences</NavLink></li>
                 </ul>
             </div>
 

@@ -1,0 +1,60 @@
+.presentation-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Rubik', sans-serif;
+    color: #333;
+}
+
+.section-introduction {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-introduction h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.section-introduction p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.section-objectives, .section-skills, .section-experience {
+    margin-bottom: 40px;
+}
+
+.section-objectives h2, .section-skills h2, .section-experience h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.section-objectives p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.section-skills ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.section-experience .experience-item {
+    margin-bottom: 20px;
+}
+
+.section-experience h3 {
+    font-size: 1.5rem;
+    color: #444;
+}
+
+.section-experience p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}

@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* NAVBAR */
-
-/* PARAMS NAVBAR */
+/* NAVBAR CONTAINER */
 .navbar-container {
     width: 100%;
     display: flex;
@@ -11,46 +9,47 @@
     background-color: transparent;
     padding: 0 7%;
     font-family: "Rubik", sans-serif;
-    transition: 0.1s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* LOGO NAVBAR */
+/* LOGO */
 .navbar-logo {
     width: 120px;
     cursor: pointer;
 }
 
-/* WRAPPER POUR LE MENU */
+/* MENU WRAPPER */
 .menu-wrapper {
     display: flex;
     align-items: center;
-    flex: 1; /* La liste occupe tout l'espace disponible entre le logo et la barre de recherche */
+    flex: 1;
 }
 
-/* BOUTON MENU */
+/* MENU TOGGLE BUTTON */
 .menu-toggle {
-    display: none; /* Masquer le bouton menu par défaut sur grands écrans */
+    display: none;
 }
 
-/* LISTE DES ONGLETS */
-ul {
+/* NAVIGATION MENU */
+.ul-container {
     flex: 1;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Affiche les onglets horizontalement par défaut */
+    display: flex;
     text-align: center;
 }
 
-ul li {
+.ul-container li {
     display: inline-block;
     margin: 10px 20px;
     font-size: 18px;
     cursor: pointer;
+    transition: color 0.3s;
 }
 
-ul li:hover {
-    color: #FF5733;
+.ul-container li:hover {
+    color: #b9b9b9;
     transition: color 0.3s ease-in-out;
 }
 
@@ -58,7 +57,33 @@ ul li:hover {
     color: white;
 }
 
-/* BARRE DE RECHERCHE */
+.ul-container li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ul-container li a:hover {
+    color: #b9b9b9;
+}
+
+.ul-container li a:visited {
+    color: inherit;
+}
+
+.ul-container.dark li a:hover {
+    color: #ccc;
+}
+
+/* SEARCH BOX */
+.search-box-container {
+    display: flex;
+    align-items: center;
+    background: lightgrey;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
 .search-box-container input {
     padding: 6px;
     background: transparent;
@@ -77,35 +102,19 @@ ul li:hover {
     background-color: white;
 }
 
-.search-box-container {
-    display: flex;
-    align-items: center;
-    background: lightgrey;
-    padding: 10px 20px;
-    border-radius: 50px;
-}
-
 .search-icone {
     width: 30px;
     cursor: pointer;
 }
 
-/* TRANSITIONS */
-.search-box-container {
-    transition: 0.5s;
-}
-.navbar-container {
-    transition: 0.1s;
-}
-
-/* ICONE NUIT/JOUR */
+/* THEME TOGGLE ICON */
 .activer-icone {
     width: 50px;
     cursor: pointer;
     margin-left: 40px;
 }
 
-/* Responsive Design */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
     .navbar-container {
         flex-direction: column;
@@ -121,28 +130,28 @@ ul li:hover {
     }
 
     .menu-toggle {
-        display: block; /* Afficher le bouton menu sur petits écrans */
+        display: block;
         background: none;
         border: none;
         font-size: 24px;
         cursor: pointer;
-        margin: 10px 0; /* Espace autour du bouton menu */
+        margin: 10px 0;
     }
 
     .ul-container {
-        display: none; /* Masquer la liste par défaut sur petits écrans */
-        flex-direction: column; /* Afficher les éléments en colonne */
-        width: 100%; /* Assurer que la liste occupe toute la largeur */
-        background-color: white; /* Fond blanc pour le menu déroulant */
-        border: 1px solid #ddd; /* Bordure légère pour délimiter le menu */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le menu */
-        z-index: 1; /* Assurer que la liste soit au-dessus des autres éléments */
-        position: relative; /* Nécessaire pour que la liste pousse le contenu sous-jacent */
-        margin-top: 10px; /* Espacement au-dessus du menu */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        position: relative;
+        margin-top: 10px;
     }
 
     .ul-container.open {
-        display: flex; /* Afficher la liste lorsque le menu est ouvert */
+        display: flex;
     }
 
     .ul-container.dark {
@@ -158,20 +167,3 @@ ul li:hover {
         color: white;
     }
 }
-
-/*@media (min-width: 800px) and (max-width: 1024px) {
-    .navbar-container {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .menu-toggle {
-        display: none; /* Masquer le bouton menu sur écrans moyens 
-    }
-
-    .ul-container {
-        display: flex; /* Afficher la liste horizontalement 
-        flex-direction: row; /* Alignement horizontal 
-        width: auto; /* Largeur automatique 
-    }
-}*/
